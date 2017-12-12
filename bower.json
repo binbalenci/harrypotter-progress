@@ -1,0 +1,27 @@
+{
+  "name": "harrypotter-progress",
+  "authors": [
+    "Binh Bui <binh@vaadin.com>"
+  ],
+  "description": "This is a Harry Potter themed progress",
+  "main": "harrypotter-progress.html",
+  "keywords": [
+    "harrypotter",
+    "progress",
+    "web-component",
+    "custom-element",
+    "polymer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^2.3.1"
+  }
+}
