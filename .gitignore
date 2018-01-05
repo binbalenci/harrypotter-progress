@@ -1,2 +1,5 @@
 # Ignore whole bower_components folder
 bower_components/
+
+# Ignore reference folder which contains other repos used for reference
+reference/
