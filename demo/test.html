@@ -1,0 +1,66 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<link rel="stylesheet" type="text/css" href="test.css">
+<div class="container">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="197 143 140 120" width="140" height="120">
+    <defs>
+      <path class="main circleAnimate" d="M230,200 C246.56,200 260,213.45 260,230 C260,246.56 246.56,260 230,260 C213.45,260 200,246.56 200,230 C200,213.45 213.45,200 230,200Z" id="leftCircle"></path>
+      <path class="main circleAnimate" d="M302 200 C318.56 200 332 213.44 332 230 C332 246.56 318.56 260 302 260 C285.44 260 272 246.56 272 230 C272 213.44 285.44 200 302 200Z" id="rightCircle"></path>
+      <path class="main bridge" d="M260 222.5 C263.91 219.49 267.92 219.49  272.02 222.5" id="bridge"></path>
+      <path d="M245.29 145L251.96 175.08L245.29 175.08L250.05 196.81L231.96 166.73L241.48 166.73L234.82 145L245.29 145Z" id="lightning"></path>
+    </defs>
+    <g>
+      <g>
+        <use class="circle" href="#leftCircle"></use>
+      </g>
+      <g>
+        <use class="circle" href="#rightCircle"></use>
+      </g>
+      <g>
+        <use href="#lightning"></use>
+      </g>
+      <g>
+        <use href="#bridge"></use>
+      </g>
+    </g>
+  </svg>
+</div>
+<script type="text/javascript">
+  (function () {
+    function fullSketch() {
+      var begin = 0;
+      var durations = [2,2,1];
+      var pathsNode = document.querySelectorAll('.main');
+      var paths = Array.from(pathsNode);
+      var length = 0;
+
+      // paths[0].getBoundingClientRect();
+
+      paths.forEach(function(path, i) {
+        // console.log(path);
+        length = path.getTotalLength();
+        // Clear any style
+        path.style.transition = path.style.WebkitTransition = 'none';
+        path.style.strokeDasharray = length + ' ' + length;
+        path.style.strokeDashoffset = length;
+        // Trigger
+        path.getBoundingClientRect();
+        path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset ' + durations[i] + 's ' + begin + 's ease';
+        path.style.strokeDashoffset = '0';
+        begin += durations[i];
+      });
+
+      function addLightningAnimate() {
+        var lightning = document.getElementById("lightning");
+        lightning.classList.add("lightningAnimate");
+      }
+
+      setTimeout(addLightningAnimate, 5000);
+    }
+
+    function alert() {
+      console.log("it loaded!");
+    }
+
+    window.addEventListener('load', fullSketch);
+  }());
+</script>

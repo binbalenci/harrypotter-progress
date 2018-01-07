@@ -1,0 +1,65 @@
+/* #leftCircle {
+  stroke-dasharray: 300;
+  stroke-dashoffset: -300;
+  animation-name: dash;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#rightCircle {
+  stroke-dasharray: 300;
+  stroke-dashoffset: -300;
+  animation-name: dash;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+
+#bridge {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: dash 2s infinite linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+ */
+#lightning {
+  opacity: 0;
+  fill: #fcc329;
+  fill-opacity: 1;
+}
+
+.lightningAnimate {
+  animation: flash 1s ease;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+
+.circle, #bridge {
+  opacity: 1;
+  fill-opacity: 0;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-opacity: 1;
+}
