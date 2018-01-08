@@ -27,24 +27,24 @@
         fill-opacity: 1;
       }
 
-      /* #leftCircle {
+      .left-cirlce-animation {
         stroke-dasharray: 300;
-        animation: leftDash 6s infinite ease-out;
+        animation: left-dash 6s infinite ease-out;
       }
 
-      #rightCircle {
+      .right-circle-animation {
         stroke-dasharray: 300;
-        animation: rightDash 6s infinite ease-out;
+        animation: right-dash 6s infinite ease-out;
       }
 
-      #bridge {
+      .bridge-animation {
         stroke-dasharray: 20;
-        animation: bridgeDash 6s infinite;
+        animation: bridge-dash 6s infinite;
       }
 
-      #lightning {
+      .lightning-animation {
         animation: flash 6s infinite;
-      } */
+      }
 
       @keyframes leftDash {
         0% {
@@ -56,7 +56,7 @@
       }
 
       @keyframes rightDash {
-        0%, 33% {
+        0%, 23% {
           stroke-dashoffset: -300;
         }
         66% {
@@ -68,21 +68,22 @@
         0%, 33%, 66% {
           stroke-dashoffset: 20;
         }
-        100% {
+        84% {
           stroke-dashoffset: 0;
         }
       }
 
       @keyframes flash {
-        0%, 83% {
+        0% {
           opacity: 0;
         }
-        90%, 100% {
+        80%, 90% {
           opacity: 1;
         }
-        86%, 95% {
+        75%, 85% {
           opacity: 0;
         }
+      }
       }
     </style>
 
@@ -92,7 +93,7 @@
         <path class="main" d="M230,200 C246.56,200 260,213.45 260,230 C260,246.56 246.56,260 230,260 C213.45,260 200,246.56 200,230 C200,213.45 213.45,200 230,200Z" id="leftCircle"></path>
         <path class="main" d="M302 200 C318.56 200 332 213.44 332 230 C332 246.56 318.56 260 302 260 C285.44 260 272 246.56 272 230 C272 213.44 285.44 200 302 200Z" id="rightCircle"></path>
         <path d="M245.29 145L251.96 175.08L245.29 175.08L250.05 196.81L231.96 166.73L241.48 166.73L234.82 145L245.29 145Z" id="lightning"></path>
-        <path class="main" d="M260 222.5 C263.91 219.49 267.92 219.49  272.02 222.5" id="bridge"></path>`
+        <path class="main" d="M260 222.5 C263.91 219.49 267.92 219.49  272.02 222.5" id="bridge"></path>
       </defs>
 
       <g id="useGroup">
@@ -108,7 +109,7 @@
 
       static get properties() {
         return {
-          // If true, loader is inactive
+          // If true, loader is active. If false, loader stays still.
           active: {
             type: Boolean,
             value: true,
@@ -163,32 +164,28 @@
       }
 
       _inputChanged(size, active, speed) {
+        // Get svg node from shadow DOM
         var svg = this.$.svg;
-        var durations = [2,2,1];
-        var paths = this.$.svg.getElementsByClassName('main');
-        var begin = 0;
 
         // Set svg height and width
-        this.$.svg.style.width = 140*size + "px";
-        this.$.svg.style.height = 120*size + "px";
+        svg.style.width = 140*size + "px";
+        svg.style.height = 120*size + "px";
         // Set svg viewBox
-        this.$.svg.setAttributeNS(null, "viewBox", "197 143 140 120");
+        svg.setAttributeNS(null, "viewBox", "197 143 140 120");
         // Log to console
         console.log(size, active, speed);
 
         // Set animation for the loader
         if (active) {
-          // Define a variable for holding delay time
-          var begin = 0;
-          // TODO: Changing durations according to speed attribute
-          var durations = [2,2,1];
-          // Get all the node of the loader
-          var pathsNode = this.$.svg.querySelectorAll('.main');
-          // Form an array
-          var paths = Array.from(pathsNode);
-          // Define a variable to hold the length of the path
-          var length = 0;
-
+          this.$.leftCircle.classList.add('left-cirlce-animation');
+          this.$.rightCircle.classList.add('right-circle-animation');
+          this.$.bridge.classList.add('bridge-animation');
+          this.$.lightning.classList.add('lightning-animation');
+        } else {
+          this.$.leftCircle.classList.remove('left-cirlce-animation');
+          this.$.rightCircle.classList.remove('right-circle-animation');
+          this.$.bridge.classList.remove('bridge-animation');
+          this.$.lightning.classList.remove('lightning-animation');
         }
       }
 
