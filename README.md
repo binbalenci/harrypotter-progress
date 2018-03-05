@@ -18,7 +18,7 @@ Vaadin Directory:
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="vaadin-button.html">
+    <link rel="import" href="harrypotter-progress.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
