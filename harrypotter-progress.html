@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="harrypotter-progress">
   <template>
@@ -13,6 +13,7 @@
       }
 
       /* Styles for the loader components */
+      /* TODO: Use custom variable (valo) */
       .circle, .bridge {
         opacity: 1;
         fill-opacity: 0;
@@ -29,21 +30,21 @@
 
       .left-cirlce-animation {
         stroke-dasharray: 300;
-        animation: left-dash 6s infinite ease-out;
+        animation: left-dash 4s infinite ease-out;
       }
 
       .right-circle-animation {
         stroke-dasharray: 300;
-        animation: right-dash 6s infinite ease-out;
+        animation: right-dash 4s infinite ease-out;
       }
 
       .bridge-animation {
         stroke-dasharray: 20;
-        animation: bridge-dash 6s infinite;
+        animation: bridge-dash 4s infinite;
       }
 
       .lightning-animation {
-        animation: flash 6s infinite;
+        animation: flash 4s infinite;
       }
 
       @keyframes left-dash {
