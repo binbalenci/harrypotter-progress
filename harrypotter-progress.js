@@ -1,0 +1,206 @@
+import '@polymer/polymer/polymer-legacy.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { beforeNextRender } from '@polymer/polymer/lib/utils/render-status.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+class HarryPotterProgress extends PolymerElement {
+  static get template() {
+    return html`
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host([disabled]) {
+        opacity: 0;
+      }
+
+      /* Styles for the loader components */
+      /* TODO: Use custom variable (valo) */
+      .circle, .bridge {
+        opacity: 1;
+        fill-opacity: 0;
+        stroke: #000000;
+        stroke-width: 3;
+        stroke-opacity: 1;
+      }
+
+      .lightning {
+        opacity: 1;
+        fill: #fcc329;
+        fill-opacity: 1;
+      }
+
+      .left-cirlce-animation {
+        stroke-dasharray: 300;
+        animation: left-dash 4s infinite ease-out;
+      }
+
+      .right-circle-animation {
+        stroke-dasharray: 300;
+        animation: right-dash 4s infinite ease-out;
+      }
+
+      .bridge-animation {
+        stroke-dasharray: 20;
+        animation: bridge-dash 4s infinite;
+      }
+
+      .lightning-animation {
+        animation: flash 4s infinite;
+      }
+
+      @keyframes left-dash {
+        0% {
+          stroke-dashoffset: -300;
+        }
+        33% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes right-dash {
+        0%, 23% {
+          stroke-dashoffset: -300;
+        }
+        66% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes bridge-dash {
+        0%, 33%, 66% {
+          stroke-dashoffset: 20;
+        }
+        84% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes flash {
+        0% {
+          opacity: 0;
+        }
+        80%, 90% {
+          opacity: 1;
+        }
+        75%, 85% {
+          opacity: 0;
+        }
+      }
+      }
+    </style>
+
+    <svg id="svg">
+      <!-- Providing templates for the loader's components -->
+      <defs>
+        <path class="main" d="M230,200 C246.56,200 260,213.45 260,230 C260,246.56 246.56,260 230,260 C213.45,260 200,246.56 200,230 C200,213.45 213.45,200 230,200Z" id="leftCircle"></path>
+        <path class="main" d="M302 200 C318.56 200 332 213.44 332 230 C332 246.56 318.56 260 302 260 C285.44 260 272 246.56 272 230 C272 213.44 285.44 200 302 200Z" id="rightCircle"></path>
+        <path d="M245.29 145L251.96 175.08L245.29 175.08L250.05 196.81L231.96 166.73L241.48 166.73L234.82 145L245.29 145Z" id="lightning"></path>
+        <path class="main" d="M260 222.5 C263.91 219.49 267.92 219.49  272.02 222.5" id="bridge"></path>
+      </defs>
+
+      <g id="useGroup">
+      </g>
+
+    </svg>
+`;
+  }
+
+  static get is() {
+    return 'harrypotter-progress';
+  }
+
+  static get properties() {
+    return {
+      // If true, loader is active. If false, loader stays still.
+      active: {
+        type: Boolean,
+        value: true,
+        reflectToAttribute: true
+      },
+      // If true, hide the loader
+      disabled: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true,
+        observer: "_disabledChange"
+      },
+      /* Set the default size to be 1X, if
+      set to 0.5 then it will be 0.5x the default size, which is 140 x 120 */
+      size: {
+        type: Number,
+        value: 1
+      },
+      // The speed of the animation TODO: Write a default speed
+      speed: {
+        type: Number,
+        value: 1
+      }
+    }
+  }
+
+  static get observers() {
+    return [
+      "_inputChanged(size, active, speed)"
+    ];
+  }
+
+  connectedCallback () {
+    super.connectedCallback();
+    beforeNextRender(this, () => {
+      this._addLoaderComponent("leftCircle", "circle");
+      this._addLoaderComponent("rightCircle", "circle");
+      this._addLoaderComponent("bridge", "bridge");
+      this._addLoaderComponent("lightning", "lightning");
+    });
+  }
+
+  // Observer method for disabled property
+  _disabledChange(disabled) {
+    if (!disabled) {
+      this.removeAttribute('aria-hidden');
+    } else {
+      setTimeout(function() {
+        this.setAttribute('aria-hidden', 'true');
+      }.bind(this), 500);
+    }
+  }
+
+  _inputChanged(size, active, speed) {
+    // Get svg node from shadow DOM
+    var svg = this.$.svg;
+
+    // Set svg height and width
+    svg.style.width = 140*size + "px";
+    svg.style.height = 120*size + "px";
+    // Set svg viewBox
+    svg.setAttributeNS(null, "viewBox", "197 143 140 120");
+    // Log to console
+    console.log(size, active, speed);
+
+    // Set animation for the loader
+    if (active) {
+      this.$.leftCircle.classList.add('left-cirlce-animation');
+      this.$.rightCircle.classList.add('right-circle-animation');
+      this.$.bridge.classList.add('bridge-animation');
+      this.$.lightning.classList.add('lightning-animation');
+    } else {
+      this.$.leftCircle.classList.remove('left-cirlce-animation');
+      this.$.rightCircle.classList.remove('right-circle-animation');
+      this.$.bridge.classList.remove('bridge-animation');
+      this.$.lightning.classList.remove('lightning-animation');
+    }
+  }
+
+  // A function to create and attach <use> to render the loader
+  _addLoaderComponent(href, className) {
+    var xmlns = "http://www.w3.org/2000/svg";
+    var xlinkns = "http://www.w3.org/1999/xlink";
+    var use = document.createElementNS(xmlns, "use");
+    use.setAttributeNS(null, "class", className);
+    use.setAttributeNS(xlinkns, "xlink:href", "#" + href);
+    this.$.useGroup.appendChild(use);
+  }
+}
+// Register custom element definition using standard platform API
+customElements.define(HarryPotterProgress.is, HarryPotterProgress);

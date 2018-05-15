@@ -3,3 +3,5 @@ bower_components/
 
 # Ignore reference folder which contains other repos used for reference
 reference/
+
+node_modules
