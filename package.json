@@ -21,7 +21,8 @@
   "author": "Binh Bui <binh@vaadin.com>",
   "license": "MIT",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
   },
   "devDependencies": {}
 }
