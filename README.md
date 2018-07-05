@@ -1,11 +1,11 @@
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/binhbbbb/harrypotter-progress)  
 Vaadin Directory:
-[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Star on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
-[![Rating on vaadin.com/directory](https://img.shields.io/vaadin-directory/rating/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
-[![Rating count on vaadin.com/directory](https://img.shields.io/vaadin-directory/rc/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
-[![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
-[![Latest release date on vaadin.com/directory](https://img.shields.io/vaadin-directory/rd/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/binhbbbbshields-badge)
+[![Star on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/binhbbbbharrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbbbharrypotter-progress)
+[![Rating on vaadin.com/directory](https://img.shields.io/vaadin-directory/rating/binhbbbbharrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbbbharrypotter-progress)
+[![Rating count on vaadin.com/directory](https://img.shields.io/vaadin-directory/rc/binhbbbbharrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbbbharrypotter-progress)
+[![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/binhbbbbharrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbbbharrypotter-progress)
+[![Latest release date on vaadin.com/directory](https://img.shields.io/vaadin-directory/rd/binhbbbbharrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbbbharrypotter-progress)
 
 # &lt;harrypotter-progress&gt;
 
