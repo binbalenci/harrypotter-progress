@@ -1,17 +1,17 @@
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-button)  
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/binhbbbb/harrypotter-progress)  
 Vaadin Directory:
-[![Published on vaadin.com/directory](https://img.shields.io/vaadin-directory/status/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Star on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Rating on vaadin.com/directory](https://img.shields.io/vaadin-directory/rating/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Rating count on vaadin.com/directory](https://img.shields.io/vaadin-directory/rc/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
-[![Latest release date on vaadin.com/directory](https://img.shields.io/vaadin-directory/rd/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/binhbbui411shields-badge)
+[![Star on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
+[![Rating on vaadin.com/directory](https://img.shields.io/vaadin-directory/rating/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
+[![Rating count on vaadin.com/directory](https://img.shields.io/vaadin-directory/rc/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
+[![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
+[![Latest release date on vaadin.com/directory](https://img.shields.io/vaadin-directory/rd/binhbbui411harrypotter-progress.svg)](https://vaadin.com/directory/component/binhbbui411harrypotter-progress)
 
 # &lt;harrypotter-progress&gt;
 
 [Live Demo ↗]()
 
-[&lt;shields-badge&gt;](https://vaadin.com/directory/component/binhbbui411shields-badge) is a [Polymer 2](http://polymer-project.org) web component for generating a Harry Potter themed progress.
+[&lt;harrypotter-progress&gt;](https://vaadin.com/directory/component/binhbbui411harrypotter-progress) is a [Polymer 2](http://polymer-project.org) web component for generating a Harry Potter themed progress.
 
 <!--
 ```
