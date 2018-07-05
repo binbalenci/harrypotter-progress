@@ -9,7 +9,7 @@ Vaadin Directory:
 
 # &lt;harrypotter-progress&gt;
 
-[Live Demo ↗]()
+[Live Demo ↗](https://codepen.io/vaadin/pen/dKEQOM?editors=1000)
 
 [&lt;harrypotter-progress&gt;](https://vaadin.com/directory/component/binhbbui411harrypotter-progress) is a [Polymer 2](http://polymer-project.org) web component for generating a Harry Potter themed progress.
 
